@@ -9,13 +9,13 @@ mv gradle.properties.txt gradle.properties
 cat app/build.gradle  | sed s/\\\/\\\/compileOptions/compileOptions/ > app/build.gradle.txt
 mv app/build.gradle.txt  app/build.gradle
 
-#cat app/build.gradle  | sed "s/\\\/\\\/ +sourceCompatibility/    sourceCompatibility/" >app/build.gradle.txt
-#mv app/build.gradle.txt  app/build.gradle
+cat app/build.gradle  | sed "s/.*sourceCompatibility/         sourceCompatibility/" >app/build.gradle.txt
+mv app/build.gradle.txt  app/build.gradle
 
-#cat app/build.gradle  | sed s/\\\/\\\/    targetCompatibility/    targetCompatibility/ >app/build.gradle.txt
-#mv app/build.gradle.txt  app/build.gradle
+cat app/build.gradle  | sed "s/.*    targetCompatibility/        targetCompatibility/" >app/build.gradle.txt
+mv app/build.gradle.txt  app/build.gradle
 
-#cat app/build.gradle  | sed s/\\\/\\\/compileOptions\\\}/\\\}/ >  app/build.gradle.txt
-#mv app/build.gradle.txt  app/build.gradle
+cat app/build.gradle  | sed "s/.*compileOptions}/    }/" >  app/build.gradle.txt
+mv app/build.gradle.txt  app/build.gradle
 
 
